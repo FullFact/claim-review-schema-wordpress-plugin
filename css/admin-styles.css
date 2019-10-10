@@ -1,0 +1,63 @@
+.claimbox {
+    border: 1px solid #e2e4e7;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.crhalf, .crfull, .crquarter, .crthreequarters {
+    display: block;
+    padding-bottom: 20px;
+}
+
+.crfull {
+    width: 100%;
+}
+
+.crhalf {
+    display: inline-block;
+    width: 48%;
+    padding-right: 2%;
+}
+
+.crquarter {
+    display: inline-block;
+    width: 23%;
+    padding-right: 2%;
+}
+
+.crthreequarters {
+    display: inline-block;
+    width: 73%;
+    padding-right: 2%;
+}
+
+.crnobottompadding {
+    padding-bottom: 0px;
+}
+
+.claim-more-fields {
+
+}
+
+.claim-review-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #191e23;
+    fill: currentColor;
+    transition: color .1s ease-in-out;
+}
+
+.claim-more-fields-box {
+    display: none;
+}
+
+.cr-add-wrapper {
+    text-align: right;
+}
+
+.cr-text-right {
+    text-align: right;
+}
