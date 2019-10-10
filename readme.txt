@@ -9,7 +9,7 @@ Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Implement Claim Review Schema on sites to allow fact-checking organisations to implement claim revew schema on their sites.
+Implements Claim Review Schema on sites, mainly to allow fact checking organisations to structure their fact checks in machine readable ways.
 
 == Description ==
 
@@ -24,14 +24,19 @@ To install the plugin, do the following.
 1. Visit the plugins page from your WordPress Dashboard and select "Add New".
 2. Search for "Full Fact - Claim Review Schema".
 3. Activate "Full Fact - Claim Review Schema".
-4. Back in the WordPress Dashboard, go to "Fact Check Schema Settings" from Settings.
+4. Back in the WordPress Dashboard, go to "Claim Review Schema Settings" from Settings.
 5. Add your Organisation Details, as well as Display Settings.
 6. Go to any post of the post type that you set for the Display Settings and add your Schema details.
+7. Once you publish the post, the schema will be published too.
 
 == Screenshots ==
 
 
 == Changelog ==
+
+= 0.75 =
+* Changed some Claim fields to text areas.
+* Improve wording throughout the plugin.
 
 = 0.5 =
 * First Version
