@@ -42,6 +42,10 @@ To install the plugin, do the following.
 Changelog
 ---------
 
+0.8
+---
+* Added Sanitization
+
 0.75
 ----
 * Changed some Claim fields to text areas.

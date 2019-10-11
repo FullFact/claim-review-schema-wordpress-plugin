@@ -13,9 +13,9 @@ Implements Claim Review Schema on sites, mainly to allow fact checking organisat
 
 == Description ==
 
-The Claim Review Schema is a Schema led by [The Claim Review Project](https://www.claimreviewproject.com/) that allows fact checking organisations to tag their articles in such a way that allows sites such as Google, Facebook, Bing & Youtube to analyse the article and structure the data accordingly in their indexes.
+Claim Review Schema is a Schema led by an international consortium of fact checkers. It allows fact checking organisations to tag their articles in such a way that allows third parties such as Google, Facebook, Bing & Youtube to analyse and sort the fact checking data accordingly in their indexes.
 
-This plugin, created by an independent UK Fact Checking Charity [Full Fact](https://fullfact.org/), allows fact checkers to quickly and easily fill in a few details about the fact checking article, and implement schema.
+This plugin was created by an independent UK Fact Checking Charity [Full Fact](https://fullfact.org/), it allows fact checkers to quickly and easily fill in the details needed for claim review schema, and adds it onto every single article that is published.
 
 == Installation ==
 
@@ -33,6 +33,9 @@ To install the plugin, do the following.
 
 
 == Changelog ==
+
+= 0.8 =
+* Added sanitization.
 
 = 0.75 =
 * Changed some Claim fields to text areas.
