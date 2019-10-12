@@ -289,61 +289,70 @@ function claimbox_save_data( $post_id, $post ) {
 
 		if ( is_array( $newclaim ) ) {
 			array_values( $newclaim );
+			$sanitizedclaim = array();
 
-			for ( $x == 0; $x < sizeof( $newclaim ); $x++ ) {
+
+
+			for ( $x = 0; $x < sizeof( $newclaim ); $x++ ) {
+
 				if ( array_key_exists( 'claimreviewed', $newclaim[$x] ) ) {
-					$newclaim[$x]['claimreviewed'] = sanitize_text_field( $newclaim[$x]['claimreviewed'] );
+					$sanitizedclaim[$x]['claimreviewed'] = sanitize_text_field( $newclaim[$x]['claimreviewed'] );
 				}
+
+				//wp_die( print_r( $sanitizedclaim ) . print_r( $newclaim[0] ) );
 
 				if ( array_key_exists( 'date', $newclaim[$x] ) ) {
-					$newclaim[$x]['date'] = sanitize_text_field( $newclaim[$x]['date'] );
+					$sanitizedclaim[$x]['date'] = sanitize_text_field( $newclaim[$x]['date'] );
 				}
 
-				if ( array_key_exists( 'url', $newclaim[$x] ) ) {
+				if ( array_key_exists( 'appearance', $newclaim[$x] ) ) {
 
-					for ( $y == 0; $y < sizeof( $newclaim[$x]['url'] ); $y++ )
-					$newclaim[$x]['url'][$y] = esc_url( $newclaim[$x]['url'][$y] );
-				}
+					if ( array_key_exists( 'url', $newclaim[$x]['appearance'] )) {
+						for ( $y = 0; $y < sizeof( $newclaim[$x]['appearance']['url'] ); $y++ ) {
+							$sanitizedclaim[$x]['appearance']['url'][$y] = esc_url( $newclaim[$x]['appearance']['url'][$y] );
+						}
+					}
 
-				if ( array_key_exists( 'original', $newclaim[$x] ) ) {
-					$newclaim[$x]['original'] = sanitize_text_field( $newclaim[$x]['original'] );
-				}
-
-				if ( array_key_exists( 'author', $newclaim[$x] ) ) {
-					$newclaim[$x]['author'] = sanitize_text_field( $newclaim[$x]['author'] );
-				}
-
-				if ( array_key_exists( 'author', $newclaim[$x] ) ) {
-					$newclaim[$x]['assessment'] = sanitize_text_field( $newclaim[$x]['assessment'] );
+					if ( array_key_exists( 'original', $newclaim[$x]['appearance'] ) ) {
+						$sanitizedclaim[$x]['appearance']['original'] = sanitize_text_field( $newclaim[$x]['appearance']['original'] );
+					}
 				}
 
 				if ( array_key_exists( 'author', $newclaim[$x] ) ) {
-					$newclaim[$x]['anchor'] = sanitize_text_field( $newclaim[$x]['anchor'] );
+					$sanitizedclaim[$x]['author'] = sanitize_text_field( $newclaim[$x]['author'] );
+				}
+
+				if ( array_key_exists( 'author', $newclaim[$x] ) ) {
+					$sanitizedclaim[$x]['assessment'] = sanitize_text_field( $newclaim[$x]['assessment'] );
+				}
+
+				if ( array_key_exists( 'author', $newclaim[$x] ) ) {
+					$sanitizedclaim[$x]['anchor'] = sanitize_text_field( $newclaim[$x]['anchor'] );
 				}
 
 				if ( array_key_exists( 'location', $newclaim[$x] ) ) {
-					$newclaim[$x]['location'] = sanitize_text_field( $newclaim[$x]['location'] );
+					$sanitizedclaim[$x]['location'] = sanitize_text_field( $newclaim[$x]['location'] );
 				}
 
 				if ( array_key_exists( 'job-title', $newclaim[$x] ) ) {
-					$newclaim[$x]['job-title'] = sanitize_text_field( $newclaim[$x]['job-title'] );
+					$sanitizedclaim[$x]['job-title'] = sanitize_text_field( $newclaim[$x]['job-title'] );
 				}
 
 				if ( array_key_exists( 'image', $newclaim[$x] ) ) {
-					$newclaim[$x]['image'] = esc_url( $newclaim[$x]['image'] );
+					$sanitizedclaim[$x]['image'] = esc_url( $newclaim[$x]['image'] );
 				}
 
 				if ( array_key_exists( 'numeric-rating', $newclaim[$x] ) ) {
-					$newclaim[$x]['numeric-rating'] = esc_url( $newclaim[$x]['numeric-rating'] );
+					$sanitizedclaim[$x]['numeric-rating'] = esc_url( $newclaim[$x]['numeric-rating'] );
 				}
 
 				if ( array_key_exists( 'rating-image', $newclaim[$x] ) ) {
-					$newclaim[$x]['rating-image'] = esc_url( $newclaim[$x]['rating-image'] );
+					$sanitizedclaim[$x]['rating-image'] = esc_url( $newclaim[$x]['rating-image'] );
 				}
 			}
 		}
 
-		update_post_meta( $post_id, '_fullfact_all_claims', $newclaim );
+		update_post_meta( $post_id, '_fullfact_all_claims', $sanitizedclaim );
 
 	}
 } add_action( 'save_post', 'claimbox_save_data', 10, 2 );

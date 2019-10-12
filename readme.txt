@@ -33,6 +33,8 @@ To install the plugin, do the following.
 
 
 == Changelog ==
+= 0.9 =
+* Improved sanitization.
 
 = 0.8 =
 * Added sanitization.

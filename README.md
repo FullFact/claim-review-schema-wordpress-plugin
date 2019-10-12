@@ -41,6 +41,9 @@ To install the plugin, do the following.
 
 Changelog
 ---------
+0.9
+---
+* Improved Sanitization
 
 0.8
 ---
