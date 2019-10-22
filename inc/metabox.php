@@ -162,7 +162,7 @@ function claim_review_build_claim_box( $x = 1, $data = false ) {
 	$claimbox .= '<div class="crfull"><label for="claim-author-' . $x . '"><strong>' . __( 'Claim Author Name', 'claimreview' ) . '</strong></label>
 	<br />
 	<input class="widefat" type="text" name="claim[' . $arraykey . '][author]" id="claim-author-' . $x . '" value="' . $claimauthorcurrent . '" /><br/>
-	<span class="description">' . __( 'Name of the person or entity who made the claim.', 'claimreview' ) . '</span></div>';
+	<span class="description">' . __( 'Name of the person or entity who made the claim. For viral social media posts without a clear source, use your discretion to show that the claim is viral, for example, ‘Viral social media post’. Take care not to imply that Facebook the company made the claim.', 'claimreview' ) . '</span></div>';
 
 	$claimbox .= '<div class="crfull"><label for="claim-assesment-' . $x . '"><strong>' . __( 'Claim Assessment', 'claimreview' ) . '</strong></label>
 	<br />
@@ -176,7 +176,7 @@ function claim_review_build_claim_box( $x = 1, $data = false ) {
 	$claimbox .= '<div class="crfull"><label for="claim-review-anchor-' . $x . '"><strong>' . __( 'Claim Review Anchor', 'claimreview' ) . '</strong></label>
 	<br />
 	<input class="widefat" type="text" name="claim[' . $arraykey . '][anchor]" id="claim-review-anchor-' . $x . '" value="' . $claimanchorcurrent . '" /><br/>
-	<span class="description">' . __( 'If provided, this will be added to the end of the URL of the page.', 'claimreview' ) . '</span></div>';
+	<span class="description">' . __( 'If provided, this will be added to the end of the URL of the page. This will be sanitized to be a URL slug', 'claimreview' ) . '</span></div>';
 
 	$claimbox .= '<div class="crfull"><label for="claim-location-' . $x . '"><strong>' . __( 'Claim Location', 'claimreview' ) . '</strong></label>
 	<br />
@@ -288,7 +288,7 @@ function claimbox_save_data( $post_id, $post ) {
 		$newclaim = $_POST['claim'];
 
 		if ( is_array( $newclaim ) ) {
-			array_values( $newclaim );
+			$newclaim = array_values( $newclaim );
 			$sanitizedclaim = array();
 
 
@@ -326,8 +326,8 @@ function claimbox_save_data( $post_id, $post ) {
 					$sanitizedclaim[$x]['assessment'] = sanitize_text_field( $newclaim[$x]['assessment'] );
 				}
 
-				if ( array_key_exists( 'author', $newclaim[$x] ) ) {
-					$sanitizedclaim[$x]['anchor'] = sanitize_text_field( $newclaim[$x]['anchor'] );
+				if ( array_key_exists( 'anchor', $newclaim[$x] ) ) {
+					$sanitizedclaim[$x]['anchor'] = sanitize_title( $newclaim[$x]['anchor'] );
 				}
 
 				if ( array_key_exists( 'location', $newclaim[$x] ) ) {
@@ -343,7 +343,7 @@ function claimbox_save_data( $post_id, $post ) {
 				}
 
 				if ( array_key_exists( 'numeric-rating', $newclaim[$x] ) ) {
-					$sanitizedclaim[$x]['numeric-rating'] = esc_url( $newclaim[$x]['numeric-rating'] );
+					$sanitizedclaim[$x]['numeric-rating'] = sanitize_text_field( $newclaim[$x]['numeric-rating'] );
 				}
 
 				if ( array_key_exists( 'rating-image', $newclaim[$x] ) ) {

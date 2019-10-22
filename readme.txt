@@ -29,10 +29,20 @@ To install the plugin, do the following.
 6. Go to any post of the post type that you set for the Display Settings and add your Schema details.
 7. Once you publish the post, the schema will be published too.
 
-== Screenshots ==
-
+Full Documentation is available [here](https://github.com/FullFact/claim-review-schema-wordpress-plugin/wiki/Documentation).
 
 == Changelog ==
+= 1.0 =
+* First Version.
+
+= 0.11 =
+* Changed the wording on the Claim Author Field.
+
+= 0.10 =
+* Added the ID field.
+* Fix a bug in the indexing fields.
+* Fix a bug with the ratings of URL's.
+
 = 0.9 =
 * Improved sanitization.
 

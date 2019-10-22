@@ -41,6 +41,20 @@ To install the plugin, do the following.
 
 Changelog
 ---------
+1.0
+---
+* First Version.
+
+0.11
+----
+* Changed the wording on the Claim Author Field.
+
+0.95
+----
+* Added the ID field.
+* Fix a bug in the indexing fields.
+* Fix a bug with the ratings of URL's.
+
 0.9
 ---
 * Improved Sanitization

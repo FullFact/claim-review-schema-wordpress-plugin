@@ -59,6 +59,11 @@ function claim_review_build_json_ld() {
 					$temparray['author']        = $authorarray;
 					$temparray['claimReviewed'] = $claim['claimreviewed'];
 
+					if ( array_key_exists( 'anchor', $claim ) ) {
+						$temparray['@id'] = trailingslashit( $url ) . '#' . $claim['anchor'];
+					} else {
+						$temparray['@id'] = trailingslashit( $url ) . '#' . $claim['anchor'];
+					}
 
 					// Add Claim items, as well as first appearances
 					$appearance      = array();
