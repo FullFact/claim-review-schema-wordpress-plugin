@@ -4,7 +4,7 @@ Donate link: https://fullfact.org/donate/
 Tags: schema
 Requires at least: 5.1
 Tested up to: 5.3
-Requires PHP: 7.2
+Requires PHP: 7.0
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,9 @@ To install the plugin, do the following.
 Full Documentation is available [here](https://github.com/FullFact/claim-review-schema-wordpress-plugin/wiki/Documentation).
 
 == Changelog ==
+= 1.0.1 =
+* Removed the ID Field for now as it was causing errors.
+
 = 1.0 =
 * First Version.
 
