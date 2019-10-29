@@ -1,3 +1,4 @@
+size
 <?php
 
 /**
@@ -162,7 +163,7 @@ function claim_review_build_claim_box( $x = 1, $data = false ) {
 	$claimbox .= '<div class="crfull"><label for="claim-author-' . $x . '"><strong>' . __( 'Claim Author Name', 'claimreview' ) . '</strong></label>
 	<br />
 	<input class="widefat" type="text" name="claim[' . $arraykey . '][author]" id="claim-author-' . $x . '" value="' . $claimauthorcurrent . '" /><br/>
-	<span class="description">' . __( 'Name of the person or entity who made the claim. For viral social media posts without a clear source, use your discretion to show that the claim is viral, for example, ‘Viral social media post’. Take care not to imply that Facebook the company made the claim.', 'claimreview' ) . '</span></div>';
+	<span class="description">' . __( 'Name of the person or entity who made the claim. Just their name, not their job or title. For viral social media posts without a clear source, use your discretion to show that the claim is viral e.g. ‘Viral social media post’. Take care not to imply that a particular social media company made the claim.', 'claimreview' ) . '</span></div>';
 
 	$claimbox .= '<div class="crfull"><label for="claim-assesment-' . $x . '"><strong>' . __( 'Claim Assessment', 'claimreview' ) . '</strong></label>
 	<br />
@@ -176,12 +177,12 @@ function claim_review_build_claim_box( $x = 1, $data = false ) {
 	$claimbox .= '<div class="crfull"><label for="claim-review-anchor-' . $x . '"><strong>' . __( 'Claim Review Anchor', 'claimreview' ) . '</strong></label>
 	<br />
 	<input class="widefat" type="text" name="claim[' . $arraykey . '][anchor]" id="claim-review-anchor-' . $x . '" value="' . $claimanchorcurrent . '" /><br/>
-	<span class="description">' . __( 'If provided, this will be added to the end of the URL of the page. This will be sanitized to be a URL slug', 'claimreview' ) . '</span></div>';
+	<span class="description">' . __( 'If provided, this will be added to the end of the URL of the page. This will be sanitized to be a URL slug.', 'claimreview' ) . '</span></div>';
 
 	$claimbox .= '<div class="crfull"><label for="claim-location-' . $x . '"><strong>' . __( 'Claim Location', 'claimreview' ) . '</strong></label>
 	<br />
 	<input class="widefat" type="text" name="claim[' . $arraykey . '][location]" id="claim-location-' . $x . '" value="' . $claimlocationcurrent . '" /><br/>
-	<span class="description">' . __( 'Where the claim was made.', 'claimreview' ) . '</span></div>';
+	<span class="description">' . __( 'Where the claim was made e.g. “At a press conference”.', 'claimreview' ) . '</span></div>';
 
 	$claimbox .= '<div class="crhalf"><label for="claim-author-job-title-' . $x . '"><strong>' . __( 'Claim Author Job Title', 'claimreview' ) . '</strong></label>
 	<br />
@@ -198,7 +199,7 @@ function claim_review_build_claim_box( $x = 1, $data = false ) {
 		$claimbox .= '<div class="crhalf"><label for="claim-numeric-rating-' . $x . '"><strong>' . __( 'Numeric Rating', 'claimreview' ) . '</strong></label>
 		<br />
 		<input class="widefat" type="number" step="1" name="claim[' . $arraykey . '][numeric-rating]" id="claim-numeric-rating-' . $x . '" value="' . $claimnumericcurrent . '" max="' . $max . '" min="' . $min . '" /><br/>
-		<span class="description">' . sprintf( __( 'A number rating for the claim. Between %s and %s', 'claimreview' ), $min, $max )  . '</span></div>';
+		<span class="description">' . sprintf( __( 'A number rating for the claim. Between %s and %s.', 'claimreview' ), $min, $max )  . '</span></div>';
 
 	}
 
