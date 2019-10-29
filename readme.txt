@@ -34,6 +34,7 @@ Full Documentation is available [here](https://github.com/FullFact/claim-review-
 == Changelog ==
 = 1.0.1 =
 * Removed the ID Field for now as it was causing errors.
+* Added Clarifications to field descriptions in metabox
 
 = 1.0 =
 * First Version.

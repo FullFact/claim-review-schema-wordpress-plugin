@@ -44,6 +44,7 @@ Changelog
 1.0.1
 -----
 * Removed the ID field for now.
+* Added Clarifications to field descriptions in metabox
 
 1.0
 ---
