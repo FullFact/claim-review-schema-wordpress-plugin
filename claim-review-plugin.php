@@ -8,7 +8,7 @@
 Plugin Name: Full Fact - Claim Review Schema
 Plugin URI: https://github.com/FullFact/claim-review-schema-wordpress-plugin/
 Description: Plugin for WordPress to implement Claim Review Schema
-Version: 1.0.1
+Version: 1.0.3
 Author: Full Fact
 Author URI: https://fullfact.org/
 Tags:
