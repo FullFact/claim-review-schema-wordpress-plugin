@@ -3,7 +3,7 @@ Contributors: rhyswynne, fullfact
 Donate link: https://fullfact.org/donate/
 Tags: schema
 Requires at least: 5.1
-Tested up to: 5.3
+Tested up to: 5.5
 Requires PHP: 5.6
 Stable tag: 4.3
 License: GPLv2 or later
@@ -34,6 +34,11 @@ To install the plugin, do the following.
 Full Documentation is available [here](https://github.com/FullFact/claim-review-schema-wordpress-plugin/wiki/Documentation).
 
 == Changelog ==
+= 1.0.4 =
+* Tested with WordPress 5.5
+* Fixed a bug that non latin characters couldn't be saved
+* Fixed a bug that caused a warning if a post or page is visited before an option is saved.
+
 = 1.0.3 =
 * Dropped the Required PHP requirement to 5.6. With disclaimer.
 

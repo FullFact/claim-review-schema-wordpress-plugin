@@ -7,7 +7,9 @@
 */
 function claim_review_add_custom_box() {
 	$screens    = array();
-	$post_types = get_option( 'cr-post-types' );
+	$post_types = get_option( 'cr-post-types' ) ? get_option( 'cr-post-types') : array( 'post', 'page' );
+
+
 
 	foreach ( $post_types as $key => $value ) {
 		if ( $value ) {
@@ -137,7 +139,7 @@ function claim_review_build_claim_box( $x = 1, $data = false ) {
 
 	foreach ( $claimappearancecurrent as $url ) {
 
-		if ( filter_var( $url , FILTER_VALIDATE_URL) === FALSE ) {
+		if ( !wp_http_validate_url( $url ) ) {
 			continue;
 		}
 

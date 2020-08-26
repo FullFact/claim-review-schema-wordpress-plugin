@@ -8,7 +8,7 @@ Tags: schema
 
 Requires at least: 5.1
 
-Tested up to: 5.3
+Tested up to: 5.5
 
 Requires PHP: 7.2
 
@@ -41,6 +41,12 @@ To install the plugin, do the following.
 
 Changelog
 ---------
+1.0.4
+-----
+* Tested with WordPress 5.5
+* Fixed a bug that non latin characters couldn't be saved
+* Fixed a bug that caused a warning if a post or page is visited before an option is saved.
+
 1.0.3
 -----
 * Tested on PHP 5.6.
