@@ -5,7 +5,7 @@ Tags: schema
 Requires at least: 5.1
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,9 @@ To install the plugin, do the following.
 Full Documentation is available [here](https://github.com/FullFact/claim-review-schema-wordpress-plugin/wiki/Documentation).
 
 == Changelog ==
+= 1.0.5 =
+* Uploaded some test code instead of actual code.
+
 = 1.0.4 =
 * Tested with WordPress 5.5
 * Fixed a bug that non latin characters couldn't be saved
